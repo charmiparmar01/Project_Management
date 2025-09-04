@@ -1,0 +1,37 @@
+{
+  "name": "pms-server",
+  "version": "1.0.0",
+  "description": "Project Management System - Backend API",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "nodemon app.ts",
+    "build": "npx tsc",
+    "seed": "ts-node src/seeders/index.ts",
+    "seed:roles": "ts-node src/seeders/roleSeeder.ts",
+    "seed:modules": "ts-node src/seeders/moduleSeeder.ts",
+    "seed:permissions": "ts-node src/seeders/rolePermissionSeeder.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajv-errors": "^3.0.0",
+    "ajv-formats": "^3.0.1",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.0",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@types/ajv": "^0.0.5",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10"
+  }
+}

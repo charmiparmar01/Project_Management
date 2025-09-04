@@ -11,6 +11,7 @@
     "seed:roles": "ts-node src/seeders/roleSeeder.ts",
     "seed:modules": "ts-node src/seeders/moduleSeeder.ts",
     "seed:permissions": "ts-node src/seeders/rolePermissionSeeder.ts",
+    "seed:admin": "ts-node src/seeders/adminSeeder.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

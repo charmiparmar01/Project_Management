@@ -1,4 +1,4 @@
-# Project Management System (PMS)
+# Project Management System
 
 A full-stack web application for managing projects, tasks with role-based access control.
 

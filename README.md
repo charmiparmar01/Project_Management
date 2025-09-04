@@ -75,6 +75,14 @@ PORT=port_number
 ```bash
 npm run seed
 ```
+### Note:
+- To log in as an Admin, you must run the admin seeder before starting the server:
+
+```bash
+npm run seed:admin
+```
+
+This will create a default Admin user in the database.
 
 #### Start the development server
 ```bash
@@ -109,6 +117,7 @@ The application includes seeders to populate the database with initial data:
 - **Roles**: Admin, Manager, Employee roles
 - **Modules**: System modules for permission management
 - **Role Permissions**: Default permissions for each role
+- **Admin User**: Default admin user with credentials
 
 Run the following commands to seed specific data:
 
@@ -124,6 +133,9 @@ npm run seed:modules
 
 # Seed role permissions only
 npm run seed:permissions
+
+# Seed admin user only
+npm run seed:admin
 ```
 
 ## Default Users

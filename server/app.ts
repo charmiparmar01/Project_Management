@@ -8,7 +8,6 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const HOST = '0.0.0.0';
 
 // app.use(cors());
 app.use(cors({
@@ -24,7 +23,7 @@ app.use('/api', apiRoutes);
 const startServer = async () => {
   try {
     await connectDB();
-    app.listen(Number(PORT),HOST, () => {
+    app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
   } catch (error) {

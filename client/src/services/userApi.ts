@@ -4,7 +4,7 @@ import type { User } from '../models/types';
 export const userApi = createApi({
   reducerPath: 'userapi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://tidy-boxes-cover.loca.lt/api/users',
+    baseUrl: 'http://localhost:3000/api/users',
     prepareHeaders: (headers) => {
       const token = sessionStorage.getItem('token');
       if (token && token !== 'undefined') headers.set('Authorization', `Bearer ${token}`);

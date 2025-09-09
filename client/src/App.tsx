@@ -1,6 +1,6 @@
 // src/App.tsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import AdminPage from './pages/AdminPage';
 import ManagerPage from './pages/ManagerPage';
@@ -24,8 +24,6 @@ import AssignTask from './components/AssignTask';
 
 const App: React.FC = () => {
   return (
-    <>
-      <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminPage />} />
@@ -48,8 +46,6 @@ const App: React.FC = () => {
           <Route path="/projects/:id/tasks" element={<ProjectTasks />} />
           <Route path="/" element={<Login />} />
         </Routes>
-      </Router>
-    </>
   );
 };
 

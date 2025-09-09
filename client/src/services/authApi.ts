@@ -23,7 +23,7 @@ interface LoginResponse {
 
 export const authApi = createApi({
   reducerPath: 'authApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/api/users' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://tidy-boxes-cover.loca.lt/api/users' }),
   endpoints: (builder) => ({
     login: builder.mutation<LoginResponse, LoginRequest>({
       query: (credentials) => ({

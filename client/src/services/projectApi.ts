@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const projectApi = createApi({
   reducerPath: 'projectapi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3000/api/projects',
+    baseUrl: 'https://a68ccf301d5e.ngrok-free.app/api/projects',
     prepareHeaders: (headers) => {
       const token = sessionStorage.getItem('token');
       if (token && token !== 'undefined') headers.set('Authorization', `Bearer ${token}`);

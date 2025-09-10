@@ -146,15 +146,18 @@ After seeding, you can create users through the application interface. The syste
 - **Manager**: Project and team management
 - **Employee**: Task management and updates
 
-### Default Admin Credentials
+## Default Admin Credentials
 - **Email**: admin@mail.com
 - **Password**: Admin@123
 
-## Contributing
+## Default Manager Credentials
+- **Email**: charmi@mail.com
+- **Password**: Charmi@123
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+## Default Employee Credentials
+- **Email**: honey@mail.com
+- **Password**: Honey@123
+  
+## Live URL
+- https://charmiparmar01.github.io/Project_Management/
 

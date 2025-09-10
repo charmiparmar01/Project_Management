@@ -13,7 +13,9 @@ export const projectApi = createApi({
   tagTypes: ['Project'],
   endpoints: (builder) => ({
     getProjects: builder.query<any[], void>({
-      query: () => '/projects',
+      query: () => ({ url: '/projects', method: 'GET', headers: {
+        "ngrok-skip-browser-warning": "true"
+      } }),
       providesTags: ['Project'],
     }),
     getProject: builder.query<any, string>({

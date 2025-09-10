@@ -14,7 +14,9 @@ export const userApi = createApi({
   tagTypes: ['User'],
   endpoints: (builder) => ({
     getUsers: builder.query<any, void>({
-      query: () => '/users',
+      query: () => ({ url: '/users', method: 'GET', headers: {
+        "ngrok-skip-browser-warning": "true"
+      } }),
       providesTags: ['User'],
     }),
     getUser: builder.query<any, string>({

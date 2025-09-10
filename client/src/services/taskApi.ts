@@ -13,7 +13,9 @@ export const taskApi = createApi({
   tagTypes: ['Task'],
   endpoints: (builder) => ({
     getTasks: builder.query<any[], void>({
-      query: () => '/tasks',
+      query: () => ({ url: '/tasks', method: 'GET', headers: {
+        "ngrok-skip-browser-warning": "true"
+      } }),
       providesTags: ['Task'],
     }),
     getTask: builder.query<any, string>({

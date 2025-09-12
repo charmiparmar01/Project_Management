@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Container, Box, Typography, TextField, Button, Paper, Alert } from '@mui/material';
 import { useLoginMutation } from '../services/authApi';
 import { Link } from 'react-router-dom';
+import { resetAllCaches } from '../app/store';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ const Login: React.FC = () => {
       return;
     }
     try {
+      resetAllCaches();
       const res = await login({ email, password }).unwrap();
       sessionStorage.setItem('token', res.data.accessToken);
       localStorage.setItem('UserInfo', JSON.stringify(res.data.user));

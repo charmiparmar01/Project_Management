@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography, Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
+import { resetAllCaches } from "../app/store";
 
 const drawerWidth = 240;
 
@@ -48,6 +49,7 @@ const Navbar: React.FC = () => {
 
   const handleLogout = () => {
     try {
+      resetAllCaches();
       sessionStorage.removeItem('token');
       localStorage.removeItem('UserInfo');
     } finally {

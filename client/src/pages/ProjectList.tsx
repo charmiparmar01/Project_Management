@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Paper, Table, TableHead, TableRow, TableCell, TableBody, CircularProgress, Button, Stack } from '@mui/material';
 import { useGetProjectsQuery, useDeleteProjectMutation } from '../services/projectApi';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 const ProjectList: React.FC = () => {
-  const { data, isLoading } = useGetProjectsQuery();
+  const { data, isLoading, refetch } = useGetProjectsQuery();
   const [deleteProject] = useDeleteProjectMutation();
   const navigate = useNavigate();
   const userRole = JSON.parse(localStorage.getItem('UserInfo') || 'null')?.role;
+
+  useEffect(() => {
+    refetch();
+  }, [refetch]);
 
   return (
     <>

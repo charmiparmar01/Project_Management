@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Paper, Table, TableHead, TableRow, TableCell, TableBody, CircularProgress, Button, Stack } from '@mui/material';
 import { useGetUsersQuery, useDeleteUserMutation } from '../services/userApi';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 const UserList: React.FC = () => {
-  const { data, isLoading } = useGetUsersQuery();
+  const { data, isLoading, refetch } = useGetUsersQuery();
   const [deleteUser] = useDeleteUserMutation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    refetch();
+  }, [refetch]);
 
   return (
     <>

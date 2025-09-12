@@ -22,4 +22,11 @@ export const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
+export const resetAllCaches = () => {
+  store.dispatch(authApi.util.resetApiState());
+  store.dispatch(userApi.util.resetApiState());
+  store.dispatch(taskApi.util.resetApiState());
+  store.dispatch(projectApi.util.resetApiState());
+};
+
 

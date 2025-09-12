@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Paper, Table, TableHead, TableRow, TableCell, TableBody, CircularProgress, Button, Stack } from '@mui/material';
 import { useGetTasksQuery, useDeleteTaskMutation } from '../services/taskApi';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 const TaskList: React.FC = () => {
-  const { data, isLoading } = useGetTasksQuery();
+  const { data, isLoading, refetch } = useGetTasksQuery();
   const [deleteTask] = useDeleteTaskMutation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    refetch();
+  }, [refetch]);
   return (
     <>
     <Navbar />

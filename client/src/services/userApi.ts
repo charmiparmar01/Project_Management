@@ -4,7 +4,7 @@ import type { User } from '../models/types';
 export const userApi = createApi({
   reducerPath: 'userapi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://a68ccf301d5e.ngrok-free.app/api/users',
+    baseUrl: 'https://3bfd5b71aa72.ngrok-free.app/api/users',
     prepareHeaders: (headers) => {
       const token = sessionStorage.getItem('token');
       if (token && token !== 'undefined') headers.set('Authorization', `Bearer ${token}`);

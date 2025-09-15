@@ -23,7 +23,7 @@ interface LoginResponse {
 
 export const authApi = createApi({
   reducerPath: 'authApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://a68ccf301d5e.ngrok-free.app/api/users' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://3bfd5b71aa72.ngrok-free.app/api/users' }),
   endpoints: (builder) => ({
     login: builder.mutation<LoginResponse, LoginRequest>({
       query: (credentials) => ({

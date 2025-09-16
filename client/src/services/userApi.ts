@@ -20,7 +20,7 @@ export const userApi = createApi({
       providesTags: ['User'],
     }),
     getUser: builder.query<any, string>({
-      query: (id) => `/user/${id}`,
+      query: (id) => ({ url: `/user/${id}` , method: 'GET', headers: { "ngrok-skip-browser-warning": "true" } }),
       providesTags: ['User'],
     }),
     addUser: builder.mutation<User, Omit<User, 'id'>>({

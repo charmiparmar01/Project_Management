@@ -19,7 +19,7 @@ export const taskApi = createApi({
       providesTags: ['Task'],
     }),
     getTask: builder.query<any, string>({
-      query: (id) => `/task/${id}`,
+      query: (id) => ({ url: `/task/${id}`, method: 'GET', headers: { "ngrok-skip-browser-warning": "true" } }),
       providesTags: ['Task'],
     }),
     createTask: builder.mutation<any, any>({

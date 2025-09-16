@@ -19,7 +19,7 @@ export const projectApi = createApi({
       providesTags: ['Project'],
     }),
     getProject: builder.query<any, string>({
-      query: (id) => `/project/${id}`,
+      query: (id) => ({ url: `/project/${id}`, method: 'GET', headers: { "ngrok-skip-browser-warning": "true" } }),
       providesTags: ['Project'],
     }),
     createProject: builder.mutation<any, any>({
